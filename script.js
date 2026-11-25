@@ -183,7 +183,7 @@ function espalharEstrelas() {
     return semente / 233280;
   };
   const altura = document.documentElement.scrollHeight;
-  const total = Math.max(14, Math.round(altura / 110));
+  const total = Math.min(17, Math.max(11, Math.round(altura / 240)));
   for (let i = 0; i < total; i++) {
     const estrela = document.createElement("span");
     estrela.className = "site-star" + (sortear() < 0.3 ? " site-star--gold" : "");
