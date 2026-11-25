@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,27 +26,30 @@
   <link rel="stylesheet" href="../styles.css">
   <script src="../script.js" defer></script>
 </head>
+
 <body>
   <span id="nova-janela" data-pt="Abre em uma nova janela." hidden>Opens in a new window.</span>
   <a class="skip-link" href="#conteudo"><span data-pt="Pular para o conteúdo">Skip to content</span></a>
 
   <header class="site-header" id="topo" tabindex="-1">
     <div class="container header-inner">
-      <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" class="brand" href="https://www.lunasoftwares.com/">
+      <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" class="brand"
+        href="https://www.lunasoftwares.com/">
         <img src="../assets/triluna.svg" width="104" height="68" alt="">
         <span>Luna Softwares</span>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="menu-movel" aria-expanded="false" aria-haspopup="dialog" aria-label="Open menu" data-pt-label="Abrir menu">
+      <button class="menu-toggle" type="button" aria-controls="menu-movel" aria-expanded="false" aria-haspopup="dialog"
+        aria-label="Open menu" data-pt-label="Abrir menu">
         <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <nav id="nav-principal" class="nav-principal" aria-label="Main navigation" data-pt-label="Navegação principal">
         <a href="../"><span data-pt="Aplicativos">Apps</span></a>
-        <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" href="https://github.com/AlessandraBrum/magic-luna-image-converter">Open source</a>
         <a href="../sobre/" aria-current="page"><span data-pt="Sobre">About</span></a>
         <a href="../ajuda/"><span data-pt="Ajuda">Help</span></a>
         <a href="../contato/"><span data-pt="Contato">Contact</span></a>
         <a href="../apoie/"><span data-pt="Apoie">Support</span></a>
-        <a class="button button-outline" href="../#aplicativos"><span data-pt="Conhecer a suíte">Explore the suite</span></a>
+        <a class="button button-outline" href="../#aplicativos"><span data-pt="Conhecer a suíte">Explore the
+            suite</span></a>
         <button class="language-toggle" type="button" lang="pt-BR" hidden>Português</button>
       </nav>
     </div>
@@ -55,7 +59,9 @@
     <div class="menu-drawer__header">
       <h2 id="menu-movel-titulo">Menu</h2>
       <button class="menu-drawer__close" type="button" aria-label="Close menu" data-pt-label="Fechar menu" autofocus>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
       </button>
     </div>
   </dialog>
@@ -64,24 +70,85 @@
     <div class="container subpage-inner">
       <p class="eyebrow"><span data-pt="Luna Softwares">Luna Softwares</span></p>
       <h1 id="titulo"><span data-pt="Sobre">About</span></h1>
-      <p><span data-pt="Projeto independente de">An independent project by</span> <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" href="https://alessandrabrum.com/">Alessandra Brum</a><span data-pt=", desenvolvedora front-end e designer de UX com foco em acessibilidade.">, a front-end developer and UX designer focused on accessibility.</span></p>
     </div>
+    <section class="container subpage-card-section" aria-labelledby="sobre-aplicativos">
+      <div class="subpage-card sobre-card">
+        <div>
+          <h2 id="sobre-aplicativos"><span data-pt="Sobre os aplicativos">About the apps</span></h2>
+          <p><span
+              data-pt="Projeto independente de Alessandra Brum, desenvolvedora front-end e designer de UX com foco em acessibilidade.">An
+              independent project by Alessandra Brum, a front-end developer and UX designer focused on
+              accessibility.</span></p>
+          <p><span
+              data-pt="O Magic Luna e o Grimório Noturno ainda estão em desenvolvimento. Os dois são projetos de estudo nos quais coloco em prática o que estou aprendendo.">Magic
+              Luna and Grimório Noturno are both still in development. I use both as learning projects to put what I
+              study into practice.</span></p>
+          <p class="sobre-card-links">
+            <a href="https://alessandrabrum.com/" target="_blank" rel="noopener noreferrer"
+              aria-describedby="nova-janela"><span data-pt="Portfólio">Portfolio</span></a>
+            <a href="https://linkedin.com/in/AlessandraBrum" target="_blank" rel="noopener noreferrer"
+              aria-describedby="nova-janela">LinkedIn</a>
+          </p>
+        </div>
+        <div>
+          <h3>Magic Luna</h3>
+          <p><span
+              data-pt="Conversor gratuito de imagens e PDFs para Windows. Converte arquivos entre formatos como PNG, JPG, WebP e AVIF. O processamento é feito no seu computador, funciona offline e mantém seus arquivos no dispositivo.">A
+              free image and PDF converter for Windows. Convert files between formats such as PNG, JPG, WebP, and AVIF.
+              Processing runs offline on your computer, so your files stay on your device.</span></p>
+          <p class="sobre-card-links">
+            <a href="https://magicluna.alessandrabrum.com/" data-pt-href="https://magicluna.alessandrabrum.com/pt/"
+              target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela"><span
+                data-pt="Conheça o Magic Luna">Explore Magic Luna</span></a>
+            <a href="https://github.com/AlessandraBrum/magic-luna-image-converter" target="_blank"
+              rel="noopener noreferrer" aria-describedby="nova-janela">Open source<span class="sr-only"> · Magic
+                Luna</span></a>
+          </p>
+          <h4 class="sobre-proximos-passos"><span data-pt="Próximos passos">What's next</span></h4>
+          <p><span
+              data-pt="Na próxima versão, pretendo incluir uma ferramenta para redimensionar imagens e uma opção para escolher o DPI na exportação. Ainda estou estudando como implementar esses recursos e me aprofundando em Python, a linguagem em que o Magic Luna é escrito. Como também estou tocando outros projetos, a próxima versão pode demorar um pouco.">For
+              the next version, I plan to add an image resizing tool and an option to choose the export DPI. I'm still
+              looking into how to build these features and learning more about Python, the language Magic Luna is
+              written in. I'm working on other projects as well, so the next release may take a little while.</span></p>
+        </div>
+        <div>
+          <h3>Grimório Noturno</h3>
+          <p><span data-pt="Aplicativo web gratuito para consultar e entender cartas de ">A free web app for looking up
+              and understanding </span><i>Magic: The Gathering</i><span
+              data-pt=". Você pode digitar o nome da carta, usar a busca por voz ou escaneá-la com a câmera. A ficha pode ser lida em voz alta, e o aplicativo foi pensado para ajudar pessoas com baixa visão, daltonismo ou dislexia durante o jogo.">
+              cards. You can type the card name, search by voice, or scan the card with your camera. The app can read
+              card details aloud and is designed to support players with low vision, color vision deficiency, or
+              dyslexia.</span></p>
+          <p class="sobre-card-links"><a href="https://grimorionoturno.lunasoftwares.com/#sobre" target="_blank"
+              rel="noopener noreferrer" aria-describedby="nova-janela"><span data-pt="Conheça o Grimório Noturno">About
+                Grimório Noturno</span></a></p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Luna Softwares · <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" href="https://links.alessandrabrum.com/">Alessandra Brum</a> · <a class="footer-apoio" href="../apoie/"><span data-pt="Apoie">Support</span></a></p>
+      <p>© 2026 Luna Softwares · <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela"
+          href="https://links.alessandrabrum.com/">Alessandra Brum</a> · <a class="footer-apoio" href="../apoie/"><span
+            data-pt="Apoie">Support</span></a></p>
       <div class="motion-controls">
         <button class="motion-toggle" type="button" aria-pressed="false" hidden>
-          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4v12m6-12v12"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M7 4v12m6-12v12" />
+          </svg>
           <span data-pt="Pausar animações">Pause animations</span>
         </button>
-        <p class="motion-system" hidden><span data-pt="Movimento reduzido pelo sistema">Reduced motion follows your system settings</span></p>
+        <p class="motion-system" hidden><span data-pt="Movimento reduzido pelo sistema">Reduced motion follows your
+            system settings</span></p>
       </div>
     </div>
   </footer>
   <button class="back-to-top" type="button" aria-label="Back to top" data-pt-label="Voltar ao topo">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V5m-6 6 6-6 6 6"/></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 20V5m-6 6 6-6 6 6" />
+    </svg>
   </button>
 </body>
+
 </html>

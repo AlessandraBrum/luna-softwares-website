@@ -307,7 +307,7 @@ main::before {
   background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--luna-action) 28%, transparent), transparent 70%);
 }
 .hero-tile__icon svg { width: 62%; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.hero-tile__icon--moon svg { fill: color-mix(in srgb, var(--luna-action) 80%, var(--luna-pink)); stroke: none; }
+.hero-tile__icon--convert svg { width: 68%; stroke: var(--luna-action); stroke-width: 1.65; }
 .hero-tile__icon--book { border: 0; background: none; }
 .hero-tile__icon--book svg { width: 90%; stroke: var(--luna-gold); filter: drop-shadow(0 0 .35rem color-mix(in srgb, var(--luna-gold) 60%, transparent)); }
 .hero-satellite {
@@ -1148,8 +1148,8 @@ main, .site-footer { position: relative; z-index: 1; }
   .back-to-top { bottom: calc(3rem + max(var(--luna-space-4), env(safe-area-inset-bottom))); }
 }
 
-.apoio { padding-bottom: clamp(2.5rem, 6vw, 4rem); }
-.apoio-card {
+.subpage-card-section { padding-bottom: clamp(2.5rem, 6vw, 4rem); }
+.subpage-card {
   display: grid;
   gap: 1.25rem;
   align-items: center;
@@ -1161,10 +1161,14 @@ main, .site-footer { position: relative; z-index: 1; }
     linear-gradient(160deg, color-mix(in srgb, var(--luna-raised) 70%, var(--luna-bg)), var(--luna-bg));
   box-shadow: 0 0 1.4rem color-mix(in srgb, var(--luna-gold) 12%, transparent);
 }
-.apoio-card h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 500; margin-bottom: .6rem; }
-.apoio-card p:not(.eyebrow) { max-width: 60ch; line-height: 1.6; }
-.apoio-card .button { justify-self: start; }
+.subpage-card h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 500; margin-bottom: .6rem; }
+.subpage-card p:not(.eyebrow) { max-width: 60ch; line-height: 1.6; }
+.subpage-card .button { justify-self: start; }
 @media (min-width: 56rem) {
-  .apoio-card { grid-template-columns: 1fr auto; gap: 2.5rem; }
+  .subpage-card--with-action { grid-template-columns: 1fr auto; gap: 2.5rem; }
 }
-.apoio-card .apoio-nota { margin-top: .6rem; color: var(--luna-muted); font-size: .9375rem; }
+.subpage-card .apoio-nota { margin-top: .6rem; color: var(--luna-muted); font-size: .9375rem; }
+.sobre-card h3 { margin-bottom: .35rem; }
+.sobre-proximos-passos { margin: .65rem 0 .25rem; font-size: 1rem; }
+.sobre-card-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin-top: .5rem; }
+.sobre-card-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
