@@ -185,7 +185,7 @@ main::before {
   filter: drop-shadow(0 0 .4rem var(--luna-gold));
   clip-path: polygon(50% 0%, 56% 39%, 86% 14%, 62% 44%, 100% 50%, 61% 56%, 85% 86%, 56% 62%, 50% 100%, 44% 62%, 14% 86%, 38% 56%, 0% 50%, 38% 44%, 14% 14%, 44% 39%);
 }
-.hero-tile, .hero-player, .hero-slider, .hero-spark-card {
+.hero-tile, .hero-player, .hero-slider {
   position: absolute;
   z-index: 2;
   border: 1px solid color-mix(in srgb, var(--luna-action) 38%, transparent);
@@ -273,14 +273,6 @@ main::before {
   box-shadow: 0 0 .8rem var(--luna-action);
   transform: translate(-50%, -50%);
 }
-.hero-spark-card { display: grid; place-items: center; top: 70%; right: 6%; width: 13%; aspect-ratio: 1; rotate: -5deg; }
-.hero-spark-card span {
-  width: 32%;
-  aspect-ratio: 1;
-  background: var(--luna-gold);
-  filter: drop-shadow(0 0 .3rem var(--luna-gold));
-  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
-}
 .hero-orbit {
   position: absolute;
   z-index: 3;
@@ -307,7 +299,16 @@ main::before {
   background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--luna-action) 28%, transparent), transparent 70%);
 }
 .hero-tile__icon svg { width: 62%; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.hero-tile__icon--convert svg { width: 68%; stroke: var(--luna-action); stroke-width: 1.65; }
+.hero-tile__icon--convert {
+  border-color: color-mix(in srgb, var(--luna-pink) 55%, transparent);
+  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--luna-pink) 26%, transparent), transparent 70%);
+}
+.hero-tile__icon--convert svg {
+  width: 68%;
+  stroke: color-mix(in srgb, var(--luna-pink) 70%, var(--luna-text));
+  stroke-width: 1.65;
+  filter: drop-shadow(0 0 .3rem color-mix(in srgb, var(--luna-pink) 55%, transparent));
+}
 .hero-tile__icon--book { border: 0; background: none; }
 .hero-tile__icon--book svg { width: 90%; stroke: var(--luna-gold); filter: drop-shadow(0 0 .35rem color-mix(in srgb, var(--luna-gold) 60%, transparent)); }
 .hero-satellite {
@@ -526,7 +527,6 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
   html[data-motion="normal"] .hero-orbit__satellite { animation: satellite-orbit 18s linear infinite; }
   html[data-motion="normal"] .hero-tile { animation: tile-float 7s ease-in-out infinite alternate; }
   html[data-motion="normal"] .hero-tile--grimorio { animation-delay: -2.5s; }
-  html[data-motion="normal"] .hero-spark-card { animation: tile-float 8s -4s ease-in-out infinite alternate; }
   html[data-motion="normal"] .hero-astrolabe__spark { animation: panel-glow 5s ease-in-out infinite alternate; }
   html[data-motion="normal"] .hero-satellite--1 { animation: sat-1 26s linear infinite, panel-glow 3s ease-in-out infinite alternate; }
   html[data-motion="normal"] .hero-player__wave span { animation: player-wave 2.2s ease-in-out infinite alternate; }
@@ -739,7 +739,6 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
 .hero-player { top: 42%; }
 .hero-tile--grimorio { top: 34%; }
 .hero-slider { top: 70%; }
-.hero-spark-card { top: 62%; }
 .catalog-ornament { margin-bottom: 0; }
 .section-heading { margin-bottom: 1rem; }
 @media (min-width: 56rem) {
@@ -818,7 +817,7 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
 .sparkle { width: .55rem; }
 
 .hero-astrolabe__spark { width: 12%; top: -2%; filter: drop-shadow(0 0 .35rem var(--luna-gold)) drop-shadow(0 0 1rem var(--luna-gold)); }
-.hero-tile, .hero-player, .hero-slider, .hero-spark-card {
+.hero-tile, .hero-player, .hero-slider {
   border-color: color-mix(in srgb, var(--luna-action) 30%, transparent);
   border-top-color: color-mix(in srgb, var(--luna-text) 45%, transparent);
   border-left-color: color-mix(in srgb, var(--luna-text) 32%, transparent);
@@ -832,7 +831,7 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
 @keyframes shooting { 0%, 86% { opacity: 0; translate: 0 0; } 89% { opacity: 1; } 96%, 100% { opacity: 0; translate: -14rem 0; } }
 @keyframes twinkle { from { opacity: .45; } to { opacity: .9; } }
 @media (prefers-reduced-motion: no-preference) {
-  html[data-motion="normal"] :is(.sparkle, .sky-spark, .hero-spark-card span, .section-heading > span::before, .section-heading > span::after) { animation: sparkle 3.2s ease-in-out infinite; }
+  html[data-motion="normal"] :is(.sparkle, .sky-spark, .section-heading > span::before, .section-heading > span::after) { animation: sparkle 3.2s ease-in-out infinite; }
   html[data-motion="normal"] .hero-astrolabe__spark { animation: sparkle 4s ease-in-out infinite; }
   html[data-motion="normal"] :is(.sparkle:last-child, .section-heading > span::after) { animation-delay: -1.6s; }
   html[data-motion="normal"] .sky-spark--3 { animation-delay: -.8s; }
@@ -845,6 +844,13 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
 }
 
 .subpage { min-height: 60vh; }
+body:has(> main.subpage) {
+  background:
+    radial-gradient(ellipse at 0 42%, color-mix(in srgb, var(--luna-violet) 7%, transparent), transparent 62%),
+    radial-gradient(ellipse at 100% 78%, color-mix(in srgb, var(--luna-pink) 5%, transparent), transparent 60%),
+    var(--luna-bg);
+}
+body:has(> main.subpage) > main { background: none; }
 .subpage-inner { padding-block: clamp(2.5rem, 7vw, 5rem); }
 .subpage-inner > * { max-width: 44rem; }
 .subpage h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; letter-spacing: -.02em; margin-bottom: 1.25rem; }
@@ -876,17 +882,35 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
 .hero-tile__icon--voice { border-radius: 22%; border-color: color-mix(in srgb, var(--luna-gold) 45%, transparent); background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--luna-gold) 18%, transparent), transparent 70%); }
 .hero-tile__icon--voice svg { stroke: var(--luna-gold); filter: drop-shadow(0 0 .35rem color-mix(in srgb, var(--luna-gold) 60%, transparent)); }
 
+.hero-tile, .hero-player, .hero-slider {
+  pointer-events: auto;
+  --tile-glow: var(--luna-action);
+}
+.hero-tile--magic { --tile-glow: color-mix(in srgb, var(--luna-pink) 70%, var(--luna-action)); }
+.hero-tile--grimorio { --tile-glow: var(--luna-gold); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-tile, .hero-player, .hero-slider {
+    transition: scale var(--motion-ui), border-color var(--motion-ui), box-shadow var(--motion-ui);
+  }
+}
+@media (hover: hover) {
+  .hero-tile:hover, .hero-player:hover, .hero-slider:hover {
+    z-index: 4;
+    scale: 1.045;
+    border-color: color-mix(in srgb, var(--tile-glow) 60%, transparent);
+    box-shadow:
+      inset 0 1px color-mix(in srgb, var(--luna-text) 30%, transparent),
+      0 0 2rem color-mix(in srgb, var(--tile-glow) 32%, transparent);
+  }
+}
+
 .app-card {
   --card-light: var(--luna-violet);
   --card-accent: var(--luna-action);
   --card-orbit-start: 154deg;
   gap: 1.25rem;
   border-color: color-mix(in srgb, var(--luna-text) 55%, transparent);
-  background:
-    radial-gradient(ellipse 70% 90% at 100% 100%, color-mix(in srgb, var(--card-light) 34%, transparent), transparent 70%),
-    radial-gradient(ellipse 50% 60% at 0% 0%, color-mix(in srgb, var(--card-accent) 10%, transparent), transparent 70%),
-    linear-gradient(160deg, color-mix(in srgb, var(--luna-raised) 70%, transparent), transparent),
-    var(--luna-bg);
+  background: var(--luna-surface);
 }
 .grimoire-card {
   --card-light: color-mix(in srgb, var(--luna-gold) 55%, var(--luna-violet));
@@ -1130,24 +1154,14 @@ main, .site-footer { position: relative; z-index: 1; }
   background: var(--luna-bg);
   font-size: .8125rem;
   line-height: 1.4;
+  margin-top: auto;
 }
-@media (min-width: 48rem) {
-  html:has(body > .site-footer) { scroll-padding-block-end: 3rem; }
-  body:has(> .site-footer) {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-  .site-footer {
-    position: sticky;
-    bottom: 0;
-    z-index: 3;
-    margin-top: auto;
-  }
-  .back-to-top { bottom: calc(3rem + max(var(--luna-space-4), env(safe-area-inset-bottom))); }
+body:has(> .site-footer) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
-
 .subpage-card-section { padding-bottom: clamp(2.5rem, 6vw, 4rem); }
 .subpage-card {
   display: grid;
@@ -1156,9 +1170,7 @@ main, .site-footer { position: relative; z-index: 1; }
   padding: clamp(1.25rem, 3vw, 2rem);
   border: 1px solid color-mix(in srgb, var(--luna-gold) 45%, transparent);
   border-radius: var(--radius-panel);
-  background:
-    radial-gradient(ellipse 60% 120% at 100% 50%, color-mix(in srgb, var(--luna-gold) 12%, transparent), transparent 70%),
-    linear-gradient(160deg, color-mix(in srgb, var(--luna-raised) 70%, var(--luna-bg)), var(--luna-bg));
+  background: var(--luna-surface);
   box-shadow: 0 0 1.4rem color-mix(in srgb, var(--luna-gold) 12%, transparent);
 }
 .subpage-card h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 500; margin-bottom: .6rem; }
@@ -1171,4 +1183,5 @@ main, .site-footer { position: relative; z-index: 1; }
 .sobre-card h3 { margin-bottom: .35rem; }
 .sobre-proximos-passos { margin: .65rem 0 .25rem; font-size: 1rem; }
 .sobre-card-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin-top: .5rem; }
+.sobre-apoio { margin-top: var(--luna-space-4); }
 .sobre-card-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }

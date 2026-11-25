@@ -95,6 +95,16 @@ img { display: block; max-width: 100%; }
 a { color: var(--color-link); text-underline-offset: .22em; }
 :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; }
 
+html { scrollbar-color: var(--luna-gold) transparent; }
+::-webkit-scrollbar { width: .75rem; height: .75rem; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: var(--luna-gold);
+  background-clip: padding-box;
+}
+
 .container {
   width: min(var(--page-width), 100% - var(--page-gutter) * 2);
   margin-inline: auto;
