@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 -31 261 261" role="img" aria-label="Luna Softwares"><defs><linearGradient id="luna-full" gradientUnits="userSpaceOnUse" x1="0" y1="64.75" x2="0" y2="139.25"><stop stop-color="#E75697"/><stop offset="1" stop-color="#873BC4"/></linearGradient></defs><g fill="url(#luna-full)"><path d="M61 74C74 66 86 67 97 74C108 80 113 90 113 102C113 114 108 124 97 130C86 137 74 138 61 130C79 134 95 119 95 102C95 85 79 70 61 74Z"/><circle cx="155.5" cy="102" r="37.25"/><path d="M61 74C74 66 86 67 97 74C108 80 113 90 113 102C113 114 108 124 97 130C86 137 74 138 61 130C79 134 95 119 95 102C95 85 79 70 61 74Z" transform="translate(311 0) scale(-1 1)"/></g><g fill="#F2BB7D"><path d="M0-1C.08-.32.32-.08 1 0C.32.08.08.32 0 1C-.08.32-.32.08-1 0C-.32-.08-.08-.32 0-1Z" transform="translate(44 48) scale(10)"/><path d="M0-1C.08-.32.32-.08 1 0C.32.08.08.32 0 1C-.08.32-.32.08-1 0C-.32-.08-.08-.32 0-1Z" transform="translate(155.5 33) scale(13)"/><path d="M0-1C.08-.32.32-.08 1 0C.32.08.08.32 0 1C-.08.32-.32.08-1 0C-.32-.08-.08-.32 0-1Z" transform="translate(269 52) scale(9)"/><path d="M0-1C.08-.32.32-.08 1 0C.32.08.08.32 0 1C-.08.32-.32.08-1 0C-.32-.08-.08-.32 0-1Z" transform="translate(37 158) scale(7)"/><path d="M0-1C.08-.32.32-.08 1 0C.32.08.08.32 0 1C-.08.32-.32.08-1 0C-.32-.08-.08-.32 0-1Z" transform="translate(277 154) scale(11)"/><path d="M0-1C.08-.32.32-.08 1 0C.32.08.08.32 0 1C-.08.32-.32.08-1 0C-.32-.08-.08-.32 0-1Z" transform="translate(155.5 172) scale(8)"/><circle cx="107.5" cy="44.5" r="2.4"/><circle cx="205.5" cy="41" r="2.8"/><circle cx="116.5" cy="165" r="2.4"/><circle cx="196.5" cy="166.7" r="1.9"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Luna Softwares">
+  <defs>
+    <linearGradient id="lua" gradientUnits="userSpaceOnUse" x1="10" y1="10" x2="54" y2="54">
+      <stop stop-color="#E75697"/>
+      <stop offset="1" stop-color="#873BC4"/>
+    </linearGradient>
+    <mask id="m">
+      <rect width="64" height="64" fill="#000"/>
+      <circle cx="30" cy="34" r="20" fill="#fff"/>
+      <circle cx="39" cy="26" r="17" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#140F19"/>
+  <rect width="64" height="64" fill="url(#lua)" mask="url(#m)"/>
+  <path d="M49 7.5 50.8 13.2 56.5 15 50.8 16.8 49 22.5 47.2 16.8 41.5 15 47.2 13.2Z" fill="#F2BB7D"/>
+</svg>
