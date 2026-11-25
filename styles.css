@@ -38,10 +38,10 @@ a { text-decoration: none; }
 .resources p a, .footer-inner p a { font-weight: 700; }
 @media (hover: hover) {
   a:not(.button-primary):hover { color: var(--color-link-hover); }
-  a:not(.button):hover { text-decoration: underline; }
+  a:not(.button):not(.brand):hover { text-decoration: underline; }
 }
 a:not(.button-primary):focus-visible { color: var(--color-link-hover); }
-a:not(.button):focus-visible { text-decoration: underline; }
+a:not(.button):not(.brand):focus-visible { text-decoration: underline; }
 .menu-toggle {
   display: none;
   flex: none;
@@ -1180,7 +1180,7 @@ body:has(> .site-footer) {
   .subpage-card--with-action { grid-template-columns: 1fr auto; gap: 2.5rem; }
 }
 .subpage-card .apoio-nota { margin-top: .6rem; color: var(--luna-muted); font-size: .9375rem; }
-.sobre-card h3 { margin-bottom: .35rem; }
+.sobre-card h3 { margin-top: var(--luna-space-5); margin-bottom: .35rem; }
 .sobre-proximos-passos { margin: .65rem 0 .25rem; font-size: 1rem; }
 .sobre-card-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin-top: .5rem; }
 .sobre-apoio { margin-top: var(--luna-space-4); }
