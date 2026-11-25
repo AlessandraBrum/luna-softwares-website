@@ -45,6 +45,7 @@
         <a href="../sobre/"><span data-pt="Sobre">About</span></a>
         <a href="../ajuda/"><span data-pt="Ajuda">Help</span></a>
         <a href="../contato/" aria-current="page"><span data-pt="Contato">Contact</span></a>
+        <a href="../apoie/"><span data-pt="Apoie">Support</span></a>
         <a class="button button-outline" href="../#aplicativos"><span data-pt="Conhecer a suíte">Explore the suite</span></a>
         <button class="language-toggle" type="button" lang="pt-BR" hidden>Português</button>
       </nav>
@@ -70,6 +71,11 @@
         <p><span data-pt="Todos os campos são obrigatórios, exceto as imagens.">All fields are required except images.</span></p>
         <fieldset class="contato-campos">
           <legend class="sr-only"><span data-pt="Sua mensagem">Your message</span></legend>
+          <div class="campo">
+            <label class="campo-rotulo" for="contato-nome"><span data-pt="Nome">Name</span></label>
+            <input class="campo-entrada" id="contato-nome" type="text" name="nome" autocomplete="name" maxlength="120" required>
+          </div>
+
           <div class="campo">
             <label class="campo-rotulo" for="contato-assunto"><span data-pt="Assunto">Subject</span></label>
             <select class="campo-entrada" id="contato-assunto" name="assunto" required>
@@ -125,7 +131,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Luna Softwares · <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" href="https://links.alessandrabrum.com/">Alessandra Brum</a> · <a class="footer-apoio" href="../#apoie"><span data-pt="Apoie">Support</span></a></p>
+      <p>© 2026 Luna Softwares · <a target="_blank" rel="noopener noreferrer" aria-describedby="nova-janela" href="https://links.alessandrabrum.com/">Alessandra Brum</a> · <a class="footer-apoio" href="../apoie/"><span data-pt="Apoie">Support</span></a></p>
       <div class="motion-controls">
         <button class="motion-toggle" type="button" aria-pressed="false" hidden>
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4v12m6-12v12"/></svg>

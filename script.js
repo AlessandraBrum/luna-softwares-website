@@ -159,17 +159,19 @@ function queueTopButtonUpdate() {
   if (!topButtonFrame) topButtonFrame = requestAnimationFrame(updateTopButton);
 }
 
-window.addEventListener("scroll", queueTopButtonUpdate, { passive: true });
-window.addEventListener("resize", queueTopButtonUpdate);
-topButton.addEventListener("blur", queueTopButtonUpdate);
-topButton.addEventListener("click", () => {
-  returningToTop = true;
-  pageTop.focus({ preventScroll: true });
-  window.scrollTo({ top: 0, behavior: document.documentElement.dataset.motion === "reduced" ? "instant" : "smooth" });
+if (topButton) {
+  window.addEventListener("scroll", queueTopButtonUpdate, { passive: true });
+  window.addEventListener("resize", queueTopButtonUpdate);
+  topButton.addEventListener("blur", queueTopButtonUpdate);
+  topButton.addEventListener("click", () => {
+    returningToTop = true;
+    pageTop.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: document.documentElement.dataset.motion === "reduced" ? "instant" : "smooth" });
+    queueTopButtonUpdate();
+  });
+  new ResizeObserver(queueTopButtonUpdate).observe(document.querySelector("main"));
   queueTopButtonUpdate();
-});
-new ResizeObserver(queueTopButtonUpdate).observe(document.querySelector("main"));
-queueTopButtonUpdate();
+}
 
 function espalharEstrelas() {
   const ceu = document.createElement("div");
