@@ -26,9 +26,9 @@
 .brand {
   min-height: 2.75rem;
   gap: var(--luna-space-3);
-  font: 600 clamp(1.05rem, 2vw, 1.55rem)/1.15 var(--font-display);
+  font: 600 clamp(1.3rem, 2vw, 1.55rem)/1.15 var(--font-display);
 }
-.brand img { width: clamp(4rem, 7vw, 5.9rem); height: auto; }
+.brand img { width: clamp(5rem, 7vw, 5.9rem); height: auto; }
 .brand, .nav-principal a { color: var(--color-text); text-decoration: none; }
 .nav-principal > a:not(.button) { display: flex; align-items: center; min-height: 2.75rem; }
 .nav-principal { width: 100%; flex-wrap: wrap; }
@@ -97,8 +97,15 @@ html:has(.menu-drawer[open]) { overflow: hidden; }
   cursor: pointer;
 }
 .menu-drawer__close svg { width: 1.15rem; fill: none; stroke: currentColor; stroke-width: 2; }
-.menu-drawer .nav-principal { display: grid; gap: .45rem; padding-top: .8rem; }
-.menu-drawer .button { justify-self: start; margin-top: .35rem; }
+.menu-drawer .nav-principal { display: grid; gap: 0; padding-top: .5rem; }
+.menu-drawer .nav-principal > a {
+  display: flex;
+  align-items: center;
+  min-height: 3.5rem;
+  font-size: 1.15rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--luna-border) 52%, transparent);
+}
+.menu-drawer .button { justify-self: start; margin-top: .75rem; }
 
 @media (prefers-reduced-motion: no-preference) {
   html:not([data-motion="reduced"]) .menu-drawer[open] {
@@ -547,10 +554,6 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
 
 @media (min-width: 25rem) {
   .actions { display: flex; flex-wrap: wrap; width: auto; }
-  .principles { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
-  .principles li { padding-inline: .85rem; }
-  .principles li + li { border-top: 0; }
-  .principles li:nth-child(even) { border-left: 1px solid color-mix(in srgb, var(--luna-border) 52%, transparent); }
 }
 
 @media (width < 42rem) {
@@ -560,6 +563,10 @@ html[lang="pt-BR"] .hero-title-pt { display: inline; }
   .hero-layout { padding-block: var(--luna-space-4) var(--luna-space-2); }
   .app-grid, .resources { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(22rem, calc((100% - var(--luna-space-5)) / 2))), 1fr)); }
   .grimoire-card::after { opacity: .68; }
+  .principles { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+  .principles li { padding-inline: .85rem; }
+  .principles li + li { border-top: 0; }
+  .principles li:nth-child(even) { border-left: 1px solid color-mix(in srgb, var(--luna-border) 52%, transparent); }
 }
 
 @media (min-width: 56rem) {
@@ -1076,11 +1083,9 @@ input[type="file"].campo-entrada::file-selector-button {
 :target, main [id] { scroll-margin-top: 6.5rem; }
 
 .principles li { border-radius: var(--luna-radius-control); }
-@media (hover: hover) {
-  .principles li:hover {
-    background-color: color-mix(in srgb, var(--luna-text) 7%, transparent);
-    box-shadow: 0 0 1.4rem color-mix(in srgb, var(--luna-text) 10%, transparent);
-  }
+.principles li:is(:hover, :active) {
+  background-color: color-mix(in srgb, var(--luna-text) 7%, transparent);
+  box-shadow: 0 0 1.4rem color-mix(in srgb, var(--luna-text) 10%, transparent);
 }
 @media (prefers-reduced-motion: no-preference) {
   html[data-motion="normal"] .principles li { transition: background-color var(--motion-ui), box-shadow var(--motion-ui); }
